@@ -23,13 +23,23 @@ namespace Semaihavacılık_yigit_atalay
         public MainWindow()
         {
             InitializeComponent();
-
+            combo_min.IsEnabled = false;
+            sliderr_x.IsEnabled = false;
+            sliderr_y.IsEnabled = false;
+            x.IsEnabled = false;
+            y.IsEnabled = false;
         }
         double act_x;
         double act_y;
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            if (sliderr_x.IsEnabled == false)
+            {
+                sliderr_x.IsEnabled = true;
+                sliderr_y.IsEnabled = true;
+                x.IsEnabled = true;
+                y.IsEnabled = true;
+            }
             if (combo_min.SelectedIndex >= 0)
             {
 
@@ -45,6 +55,8 @@ namespace Semaihavacılık_yigit_atalay
 
         private void combo_max_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            combo_min.IsEnabled = true;
+
             if (combo_max.SelectedIndex >= 0)
             {
 
@@ -62,10 +74,11 @@ namespace Semaihavacılık_yigit_atalay
         {
             
             x.Text = Convert.ToInt32(sliderr_x.Value).ToString();
-            act_x =sliderr_x.Value / (sliderr_x.Maximum - sliderr_x.Minimum);
-            //y_Copy1.Text = act_x.ToString();
+            act_x =(sliderr_x.Value- sliderr_x.Minimum) / (sliderr_x.Maximum - sliderr_x.Minimum);
+            y_Copy1.Text = act_x.ToString();
             box.Width = act_x * 300;
-
+            Brush brush = new SolidColorBrush(Color.FromRgb(Convert.ToByte(act_x * 233), Convert.ToByte(act_y*255), Convert.ToByte(act_y * 233)));
+            box.Fill = brush;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -90,9 +103,11 @@ namespace Semaihavacılık_yigit_atalay
         {
 
             y.Text = Convert.ToInt32(sliderr_y.Value).ToString();
-            act_y = sliderr_y.Value / (sliderr_y.Maximum - sliderr_y.Minimum);
+            act_y = (sliderr_y.Value - sliderr_y.Minimum) / (sliderr_y.Maximum - sliderr_y.Minimum);
             y_Copy.Text = act_y.ToString();
             box.Height = act_y * 300;
+            Brush brush = new SolidColorBrush(Color.FromRgb(Convert.ToByte(act_x * 233), Convert.ToByte(act_y * 255), Convert.ToByte(act_y * 233)));
+            box.Fill = brush;
         }
 
         private void y_TextChanged(object sender, TextChangedEventArgs e)
@@ -111,6 +126,11 @@ namespace Semaihavacılık_yigit_atalay
                 sliderr_x.Value = Convert.ToDouble(x.Text);
 
             }
+        }
+
+        private void box_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            boyut_txt.Text = "%"+Convert.ToInt64((act_x * act_y)*100).ToString();
         }
     }
 }

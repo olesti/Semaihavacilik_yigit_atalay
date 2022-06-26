@@ -7,8 +7,8 @@
         xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
         x:Class="Semaihavacılık_yigit_atalay.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
-    <Grid Height="434" VerticalAlignment="Center" HorizontalAlignment="Left" Width="800">
+        Title="MainWindow" Height="470" Width="879" Loaded="Window_Loaded">
+    <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="1">
                 <LinearGradientBrush.RelativeTransform>
@@ -23,40 +23,8 @@
                 <GradientStop Color="#FF5D67FF" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Grid HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Margin="307,197,0,0">
-            <Slider x:Name="sliderr_x" HorizontalAlignment="Left" VerticalAlignment="Top" Width="245" RenderTransformOrigin="0.5,0.5" Height="21" ValueChanged="sliderr_ValueChanged">
-                <Slider.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="270"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Slider.RenderTransform>
-            </Slider>
-            <TextBox x:Name="x" HorizontalAlignment="Left" Margin="129,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="39" TextChanged="x_TextChanged" />
-        </Grid>
-        <Grid HorizontalAlignment="Left" Height="45" Margin="526,33,0,0" VerticalAlignment="Top" Width="121">
-            <ComboBox x:Name="combo_min" HorizontalAlignment="Center" Margin="0,23,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
-
-
-            <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Text="Kay.Çub.Min" VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"/>
-
-        </Grid>
-        <Grid  HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Margin="659,33,0,0">
-
-            <ComboBox x:Name="combo_max" HorizontalAlignment="Center" Margin="0,23,0,0" Width="120" SelectionChanged="combo_max_SelectionChanged"/>
-            <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Text="Kay.Çub.Max" VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"/>
-
-
-
-        </Grid>
-        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,72,0,0">
-            <Rectangle HorizontalAlignment="Left" Height="300" Stroke="Black" VerticalAlignment="Top" Width="300"/>
-            <Rectangle x:Name="box"  Stroke="Black" Fill="#FFDEEA14" HorizontalAlignment="Center" MaxHeight="300" MaxWidth="300" Width="1" Height="1" VerticalAlignment="Center"/>
-        </Grid>
-        <Grid HorizontalAlignment="Right" Height="26" VerticalAlignment="Top" Margin="0,198,176,0" Width="249">
-            <Slider x:Name="sliderr_y" Width="245" RenderTransformOrigin="0.5,0.5" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,4,0" ValueChanged="sliderr_y_ValueChanged">
+        <Grid HorizontalAlignment="Left" Height="301" Margin="281,67,0,0" VerticalAlignment="Top" Width="252">
+            <Slider x:Name="sliderr_x" Width="245" RenderTransformOrigin="0.5,0.5" Height="21" ValueChanged="sliderr_ValueChanged" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,130,0,0">
                 <Slider.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -66,13 +34,53 @@
                     </TransformGroup>
                 </Slider.RenderTransform>
             </Slider>
-            <TextBox x:Name="y" TextWrapping="Wrap" Width="41" VerticalAlignment="Top" Margin="0,6,76,0" HorizontalAlignment="Right" TextChanged="y_TextChanged"/>
+            <TextBox x:Name="x" TextWrapping="Wrap" Width="39" TextChanged="x_TextChanged" VerticalAlignment="Top" Margin="129,138,0,0" HorizontalAlignment="Left" />
+
+            <TextBlock x:Name="txt_width_min" HorizontalAlignment="Left" Margin="117,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="tr-tr" Text="0"/></TextBlock>
+            <TextBlock x:Name="txt_width_max" HorizontalAlignment="Left" Margin="117,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="tr-tr" Text="0"/></TextBlock>
+            <TextBox x:Name="y_Copy1" TextWrapping="Wrap"  Margin="126,195,0,0" TextChanged="y_TextChanged" HorizontalAlignment="Left" Width="38" Height="16" VerticalAlignment="Top"/>
+            <Label Content="X-ekseni&#xD;&#xA;" HorizontalAlignment="Left" Margin="100,277,0,0" VerticalAlignment="Top" Height="26"/>
         </Grid>
-        <TextBlock x:Name="txt_width_min" HorizontalAlignment="Left" Margin="415,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="tr-tr" Text="0"/></TextBlock>
-        <TextBlock x:Name="txt_width_max" HorizontalAlignment="Left" Margin="425,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="tr-tr" Text="0"/></TextBlock>
-        <TextBlock x:Name="txt_height_max" HorizontalAlignment="Left" Margin="483,66,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
-        <TextBlock x:Name="txt_height_min" HorizontalAlignment="Left" Margin="480,329,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
-        <TextBox x:Name="y_Copy" TextWrapping="Wrap" Width="40" VerticalAlignment="Top" Margin="0,276,254,0" HorizontalAlignment="Right" TextChanged="y_TextChanged"/>
-        <TextBox x:Name="y_Copy1" TextWrapping="Wrap" Width="40" VerticalAlignment="Top" Margin="0,277,322,0" HorizontalAlignment="Right" TextChanged="y_TextChanged"/>
+        <Grid Margin="526,33,0,0" Height="45" VerticalAlignment="Top" HorizontalAlignment="Left" Width="121">
+            <ComboBox x:Name="combo_min" HorizontalAlignment="Center" Margin="0,23,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
+
+
+            <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Text="Kay.Çub.Min" VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"/>
+
+        </Grid>
+        <Grid Margin="659,33,0,0" HorizontalAlignment="Left" Width="120" Height="45" VerticalAlignment="Top">
+
+            <ComboBox x:Name="combo_max" HorizontalAlignment="Center" Width="120" SelectionChanged="combo_max_SelectionChanged" Height="22" VerticalAlignment="Bottom"/>
+            <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Text="Kay.Çub.Max" VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"/>
+
+
+
+        </Grid>
+        <Grid Margin="75,72,0,0" Height="300" VerticalAlignment="Top" HorizontalAlignment="Left" Width="300">
+            <Rectangle HorizontalAlignment="Left" Height="300" Stroke="Black" VerticalAlignment="Top" Width="300"/>
+            <Rectangle x:Name="box"  Stroke="Black" Fill="#FFDEEA14" HorizontalAlignment="Center" MaxHeight="300" MaxWidth="300" Width="1" Height="1" VerticalAlignment="Center" SizeChanged="box_SizeChanged"/>
+        </Grid>
+        <Grid Margin="363,198,0,0" HorizontalAlignment="Left" Width="452" Height="56" VerticalAlignment="Top">
+            <Slider x:Name="sliderr_y" Width="245" RenderTransformOrigin="0.5,0.5" Height="20" ValueChanged="sliderr_y_ValueChanged" VerticalAlignment="Top" Margin="0,0,205,0" HorizontalAlignment="Right">
+                <Slider.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90.000000000000014"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Slider.RenderTransform>
+            </Slider>
+            <TextBox x:Name="y" TextWrapping="Wrap" Width="41" TextChanged="y_TextChanged" VerticalAlignment="Top" Margin="0,6,270,0" HorizontalAlignment="Right"/>
+            <TextBox x:Name="y_Copy" TextWrapping="Wrap" Width="40" VerticalAlignment="Top" Margin="0,38,269,0" HorizontalAlignment="Right" TextChanged="y_TextChanged"/>
+        </Grid>
+
+        <TextBox x:Name="boyut_txt" TextWrapping="Wrap" Margin="211,382,0,0" TextChanged="y_TextChanged" BorderBrush="{x:Null}" Background="{x:Null}" Height="18" VerticalAlignment="Top" HorizontalAlignment="Left" Width="71"/>
+        <Label Content="Boyut oranı:" Margin="104,375,0,0" FontWeight="Bold" FontSize="14" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Width="91"/>
+        <Grid Margin="465,66,0,0" Height="295" VerticalAlignment="Top" HorizontalAlignment="Left" Width="54">
+            <TextBlock x:Name="txt_height_max" HorizontalAlignment="Left" Margin="18,0,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+            <TextBlock x:Name="txt_height_min" HorizontalAlignment="Left" Margin="17,263,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+            <TextBlock x:Name="txt_height_min_Copy" HorizontalAlignment="Center" Margin="0,279,0,-15" TextWrapping="Wrap" Width="55"><Run Language="tr-tr" Text="Y"/><Run Text="-ekseni"/></TextBlock>
+        </Grid>
     </Grid>
 </Window>

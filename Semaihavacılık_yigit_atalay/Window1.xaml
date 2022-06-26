@@ -1,0 +1,19 @@
+﻿<Window x:Class="Semaihavacılık_yigit_atalay.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Semaihavacılık_yigit_atalay"
+        mc:Ignorable="d"
+        Title="Window1" Height="287" Width="655">
+    <Grid Margin="0,0,0,0">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF801111"/>
+                <GradientStop Color="#FF5D67FF" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <TextBlock HorizontalAlignment="Left" Margin="71,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="140" Width="509" FontSize="14" FontWeight="Bold"><Run Text="Merhaba,"/><LineBreak/><Run/><LineBreak/><Run Text="Öncelikle size programın çalışmasını anlatacağım. İlk olarak sliderlar için max değer seçilmeli. Sonrasında min değeri seçebileceğiz. Ardından slider değerlerini değiştirdikçe karenin boyutu ve rengi değişmektedir."/></TextBlock>
+
+    </Grid>
+</Window>
